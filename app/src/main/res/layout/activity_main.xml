@@ -20,12 +20,12 @@
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="59dp"
-        android:layout_height="58dp"
+        android:id="@+id/sos_btn"
+        android:layout_width="64dp"
+        android:layout_height="62dp"
         android:layout_marginStart="179dp"
         android:layout_marginEnd="173dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="12dp"
         android:background="@drawable/rounded"
         android:elevation="15dp"
         android:text="SOS"
