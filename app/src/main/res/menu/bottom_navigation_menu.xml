@@ -8,16 +8,16 @@
     <item
         android:id="@+id/page_2"
         android:enabled="true"
-        android:icon="@drawable/person"
-        android:title="contact" />
+        android:icon="@drawable/ic_baseline_photo_24"
+        android:title="pictures" />
     <item
         android:id="@+id/page_3"
         android:enabled="true"
-        android:icon="@drawable/person"
-        android:title="contact"/>
+        android:icon="@drawable/car"
+        android:title="car" />
     <item
         android:id="@+id/page_4"
         android:enabled="true"
-        android:icon="@drawable/person"
-        android:title="contact"/>
+        android:icon="@drawable/people"
+        android:title="Profile"/>
 </menu>
