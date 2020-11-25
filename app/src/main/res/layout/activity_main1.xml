@@ -9,29 +9,41 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:orientation="vertical"
         android:padding="20dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="130dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/allerta"
+            android:text="Register"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="150dp"
+            android:layout_margin="9dp"
 
+            android:layout_marginTop="20dp"
             android:hint="Name"
             app:boxBackgroundMode="outline"
-            app:boxCornerRadiusBottomEnd="15dp"
-            app:boxCornerRadiusBottomStart="15dp"
-            app:boxCornerRadiusTopEnd="15dp"
-            app:boxCornerRadiusTopStart="15dp">
+            app:boxStrokeColor="@color/colorPrimaryDark"
+            app:boxStrokeWidth="0.8dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/person"
-                android:drawableLeft="@drawable/person"></com.google.android.material.textfield.TextInputEditText>
+                android:drawableLeft="@drawable/person" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -40,12 +52,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
+            android:layout_margin="9dp"
             android:hint="Phone Number"
             app:boxBackgroundMode="outline"
-            app:boxCornerRadiusBottomEnd="15dp"
-            app:boxCornerRadiusBottomStart="15dp"
-            app:boxCornerRadiusTopEnd="15dp"
-            app:boxCornerRadiusTopStart="15dp">
+            app:boxStrokeColor="@color/colorPrimaryDark"
+            app:boxStrokeWidth="0.8dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/phone"
@@ -64,12 +75,11 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="9dp"
             android:hint="Email"
             app:boxBackgroundMode="outline"
-            app:boxCornerRadiusBottomEnd="15dp"
-            app:boxCornerRadiusBottomStart="15dp"
-            app:boxCornerRadiusTopEnd="15dp"
-            app:boxCornerRadiusTopStart="15dp">
+            app:boxStrokeColor="@color/colorPrimaryDark"
+            app:boxStrokeWidth="0.8dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/email"
@@ -85,15 +95,14 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="9dp"
             android:hint="Enter Password"
             app:boxBackgroundMode="outline"
-            app:boxCornerRadiusBottomEnd="15dp"
-            app:boxCornerRadiusBottomStart="15dp"
-            app:boxCornerRadiusTopEnd="15dp"
-            app:boxCornerRadiusTopStart="15dp">
+            app:boxStrokeColor="@color/colorPrimaryDark"
+            app:boxStrokeWidth="0.8dp">
 
             <com.google.android.material.textfield.TextInputEditText
-               android:id="@+id/password"
+                android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/password"
@@ -108,17 +117,18 @@
             android:layout_height="wrap_content"
 
 
+            android:layout_margin="9dp"
             android:hint="Re-enter Password"
             app:boxBackgroundMode="outline"
-            app:boxCornerRadiusBottomEnd="15dp"
-            app:boxCornerRadiusBottomStart="15dp"
-            app:boxCornerRadiusTopEnd="15dp"
-            app:boxCornerRadiusTopStart="15dp">
+            app:boxStrokeColor="@color/colorPrimaryDark"
+            app:boxStrokeWidth="0.8dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/re_password"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/password"
+                android:drawableLeft="@drawable/password">
 
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
@@ -126,12 +136,13 @@
 
         <com.google.android.material.button.MaterialButton
             style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-            android:layout_width="wrap_content"
-            android:id="@+id/register"
-            android:layout_height="55dp"
-            android:layout_marginLeft="80dp"
-            android:text="Register ME!!! "
-            android:textSize="16sp"
+            android:layout_width="252dp"
+            android:layout_height="47dp"
+            android:layout_marginLeft="57dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/rounded_btn"
+            android:text="Register"
+            android:textSize="14sp"
             app:boxBackgroundMode="outline"
             app:boxCornerRadiusBottomEnd="15dp"
             app:boxCornerRadiusBottomStart="15dp"
