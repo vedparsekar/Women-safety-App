@@ -20,7 +20,7 @@
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/sos_btn"
         android:layout_width="64dp"
         android:layout_height="62dp"
@@ -28,6 +28,7 @@
         android:layout_marginEnd="173dp"
         android:layout_marginBottom="12dp"
         android:background="@drawable/rounded"
+        android:backgroundTintMode="src_over"
         android:elevation="15dp"
         android:text="SOS"
         android:textColor="#FFFFFF"
