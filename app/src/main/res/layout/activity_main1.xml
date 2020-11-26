@@ -30,7 +30,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="9dp"
+            android:layout_margin="8dp"
 
             android:layout_marginTop="20dp"
             android:hint="Name"
@@ -42,8 +42,7 @@
                 android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/person"
-                android:drawableLeft="@drawable/person" />
+                android:drawableStart="@drawable/person"/>
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -52,7 +51,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:layout_margin="9dp"
+            android:layout_margin="8dp"
             android:hint="Phone Number"
             app:boxBackgroundMode="outline"
             app:boxStrokeColor="@color/colorPrimaryDark"
@@ -62,8 +61,7 @@
                 android:id="@+id/phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/phone"
-                android:drawableLeft="@drawable/phone">
+                android:drawableStart="@drawable/phone">
 
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
@@ -75,7 +73,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="9dp"
+            android:layout_margin="8dp"
             android:hint="Email"
             app:boxBackgroundMode="outline"
             app:boxStrokeColor="@color/colorPrimaryDark"
@@ -85,8 +83,7 @@
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/email"
-                android:drawableLeft="@drawable/email">
+                android:drawableStart="@drawable/email">
 
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
@@ -95,7 +92,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="9dp"
+            android:layout_margin="8dp"
             android:hint="Enter Password"
             app:boxBackgroundMode="outline"
             app:boxStrokeColor="@color/colorPrimaryDark"
@@ -105,8 +102,7 @@
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/password"
-                android:drawableLeft="@drawable/password">
+                android:drawableStart="@drawable/password">
 
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
@@ -117,7 +113,7 @@
             android:layout_height="wrap_content"
 
 
-            android:layout_margin="9dp"
+            android:layout_margin="8dp"
             android:hint="Re-enter Password"
             app:boxBackgroundMode="outline"
             app:boxStrokeColor="@color/colorPrimaryDark"
@@ -127,8 +123,7 @@
                 android:id="@+id/re_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/password"
-                android:drawableLeft="@drawable/password">
+                android:drawableStart="@drawable/password">
 
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
