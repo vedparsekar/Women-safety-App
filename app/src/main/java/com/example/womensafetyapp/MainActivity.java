@@ -43,6 +43,11 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(), Login.class);
                     startActivity(intent);
                 }
+                if (itemId == R.id.page_3) {
+                    Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
+                    startActivity(intent);
+                }
+
                 if (itemId == R.id.page_4) {
                     Intent intent = new Intent(getApplicationContext(), Profile.class);
                     startActivity(intent);
