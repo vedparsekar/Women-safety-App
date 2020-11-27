@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             mapViewBundle = savedInstanceState.getBundle(MAP_VIEW_BUNDLE_KEY);
         }
 
+	//map
+
         mapView = findViewById(R.id.mapView);
         mapView.onCreate(mapViewBundle);
         mapView.getMapAsync((OnMapReadyCallback) this);
