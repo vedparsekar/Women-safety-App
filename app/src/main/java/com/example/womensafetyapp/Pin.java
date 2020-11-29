@@ -7,7 +7,6 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.Toast;
 
-
 public class Pin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
