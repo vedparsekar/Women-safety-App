@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 }
 
                 if (itemId == R.id.page_3) {
-                    Intent intent = new Intent(getApplicationContext(), Login.class);
+                    Intent intent = new Intent(getApplicationContext(), AddVehicleinfo.class);
                     startActivity(intent);
                 }
 
@@ -199,9 +199,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         gmap.addMarker(new MarkerOptions().position(loc).title("Panjim"));
         gmap.moveCamera(CameraUpdateFactory.newLatLng(loc));
     }
-
-
-
 
     public void statusCheck() {
         final LocationManager manager = (LocationManager) getSystemService(
