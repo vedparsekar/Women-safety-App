@@ -18,7 +18,7 @@ public class AddVehicleinfo extends AppCompatActivity {
         setContentView(R.layout.activity_add_vehicleinfo);
         vehicalno = (EditText)findViewById(R.id.input_vehicle_no);
         vehicalinfo = (EditText)findViewById(R.id.input_vehicleinfo);
-        add = (Button) findViewById(R.id.Add);
+        add = (Button) findViewById(R.id.add_btn);
 
         dbClient = new DBClient(this);
         dbClient.open();

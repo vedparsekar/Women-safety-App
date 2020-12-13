@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class DBClient {
     UserDBHelper dbhelper;
@@ -38,6 +39,19 @@ public class DBClient {
         }
         else
             return null;
+    }
+
+    public ArrayList<HashMap<String, String>> GetUsers(){
+        ArrayList<HashMap<String, String>> userList = new ArrayList<>();
+        String query = "SELECT vehicleno, details FROM vehicleinfo";
+        Cursor cursor = database.rawQuery(query,null);
+        while (cursor.moveToNext()){
+            HashMap<String,String> user = new HashMap<>();
+            user.put("vehicleno",cursor.getString(cursor.getColumnIndex("vehicleno")));
+            user.put("details",cursor.getString(cursor.getColumnIndex("details")));
+            userList.add(user);
+        }
+        return  userList;
     }
 
     public void addUser(String vehicleno,String details){

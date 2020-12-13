@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 }
 
                 if (itemId == R.id.page_3) {
-                    Intent intent = new Intent(getApplicationContext(), AddVehicleinfo.class);
+                    Intent intent = new Intent(getApplicationContext(), Vehicle.class);
                     startActivity(intent);
                 }
 
