@@ -1,5 +1,6 @@
 package com.example.womensafetyapp;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -32,7 +33,7 @@ public class MainActivity1 extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main1);
 
         //     databaseReference = FirebaseDatabase.getInstance().getReference();
 
@@ -161,7 +162,7 @@ public class MainActivity1 extends AppCompatActivity
         i.putExtra("password ", p);
 
 
-       // Toast.makeText(getApplicationContext(),"mobbbbbbbbbb "+m, Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),"mobbbbbbbbbb "+m, Toast.LENGTH_LONG).show();
 
         startActivity(i);
     }

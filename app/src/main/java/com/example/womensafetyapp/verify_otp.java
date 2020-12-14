@@ -40,10 +40,9 @@ public class verify_otp extends AppCompatActivity {
 
     //These are the objects needed
     //It is the verification id that will be sent to the user
-    private String mVerificationId;
 
     //The edittext to input the code
-    private EditText editTextCode;
+
 
     //firebase auth object
     private FirebaseAuth mAuth, mAuth1;
