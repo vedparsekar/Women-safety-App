@@ -15,8 +15,10 @@ import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -44,6 +46,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     String provider;
     double lat=15.4871883,log=73.8265425;
 
+    String phoneNumber = "9922464496";
+    String myLatitude,myLongitude;
+    MediaPlayer mediaPlayer;
 
     private static final String MAP_VIEW_BUNDLE_KEY = "MapViewBundleKey";
 
@@ -53,7 +58,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         setContentView(R.layout.activity_main);
 
         sos = findViewById(R.id.sos_btn);
-
 
         Bundle mapViewBundle = null;
         if (savedInstanceState != null) {
@@ -65,11 +69,18 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mapView.getMapAsync((OnMapReadyCallback) this);
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
+
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS}, PackageManager.PERMISSION_GRANTED);
+
         sos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Pin.class);
-                startActivity(intent);
+                //Intent intent = new Intent(getApplicationContext(), Pin.class);
+                //startActivity(intent);
+                if(mediaPlayer == null)
+                    StartSOS();
+                else
+                    StopSOS();
             }
         });
 
@@ -144,6 +155,24 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
     }
 
+    public void StopSOS() {
+        if(mediaPlayer!=null){
+            mediaPlayer.stop();
+            mediaPlayer=null;
+        }
+    }
+
+    public void StartSOS(){
+        if(mediaPlayer==null) {
+            mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.police_siren1);
+            mediaPlayer.start();
+        }
+
+//        String message = "Hey I'm Stranded and unsafe. Help! \nhttps://maps.google.com/maps?q=" + myLatitude + "," + myLongitude;
+//        SmsManager smsManager = SmsManager.getDefault();
+//        smsManager.sendTextMessage(phoneNumber, null, message, null, null);
+
+    }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
@@ -196,8 +225,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         LatLng loc = new LatLng(lat, log);
         //LatLng loc = new LatLng(15.675675675675675, 73.7146768382642);
-        gmap.addMarker(new MarkerOptions().position(loc).title("Panjim"));
+        gmap.addMarker(new MarkerOptions().position(loc).title("you're here"));
         gmap.moveCamera(CameraUpdateFactory.newLatLng(loc));
+
     }
 
     public void statusCheck() {
@@ -248,6 +278,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         //tvLatitude.setText(String.valueOf(location.getLongitude()));
         lat = location.getLatitude();
         log = location.getLongitude();
+
+        myLatitude = String.valueOf(location.getLatitude());
+        myLongitude = String.valueOf(location.getLongitude());
+
         // Setting Current Longitude
     }
     @Override
