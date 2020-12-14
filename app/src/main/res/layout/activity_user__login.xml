@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Login">
+    tools:context=".user_Login">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,9 +19,9 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="150dp"
             android:layout_marginBottom="40dp"
-            android:fontFamily="@font/allerta"
+
             android:text="Login"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/design_default_color_on_primary"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -33,10 +33,11 @@
             android:layout_margin="12dp"
             android:hint="Phone Number"
             app:boxBackgroundMode="outline"
-            app:boxStrokeColor="@color/colorPrimaryDark"
+            app:boxStrokeColor="@color/design_default_color_on_primary"
             app:boxStrokeWidth="0.8dp">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phonenumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/phone"
@@ -53,14 +54,16 @@
             android:layout_marginTop="10dp"
             android:hint="Enter Password"
             app:boxBackgroundMode="outline"
-            app:boxStrokeColor="@color/colorPrimaryDark"
+            app:boxStrokeColor="@color/design_default_color_on_primary"
             app:boxStrokeWidth="0.8dp">
 
             <com.google.android.material.textfield.TextInputEditText
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/password"
-                android:drawableLeft="@drawable/password">
+                android:drawableLeft="@drawable/password"
+                android:id="@+id/passwordq">
 
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
@@ -71,7 +74,7 @@
             android:layout_height="47dp"
             android:layout_marginLeft="57dp"
             android:layout_marginTop="40dp"
-            android:background="@drawable/rounded_btn"
+android:id="@+id/loginbtn"
             android:text="Login  "
             android:textSize="14sp"
             app:boxBackgroundMode="outline"

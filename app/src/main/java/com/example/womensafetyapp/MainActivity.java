@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 }
 
                 if (itemId == R.id.page_4) {
-                    Intent intent = new Intent(getApplicationContext(), Profile.class);
+                    Intent intent = new Intent(getApplicationContext(), UserProfile.class);
                     startActivity(intent);
                 }
                 return false;

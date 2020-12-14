@@ -20,9 +20,9 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="130dp"
             android:layout_marginBottom="20dp"
-            android:fontFamily="@font/allerta"
+
             android:text="Register"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/design_default_color_on_primary"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -32,17 +32,22 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
 
+            app:boxCornerRadiusBottomEnd="15dp"
+            app:boxCornerRadiusBottomStart="15dp"
+            app:boxCornerRadiusTopEnd="15dp"
+            app:boxCornerRadiusTopStart="15dp"
             android:layout_marginTop="20dp"
             android:hint="Name"
             app:boxBackgroundMode="outline"
-            app:boxStrokeColor="@color/colorPrimaryDark"
+            app:boxStrokeColor="@color/design_default_color_on_primary"
             app:boxStrokeWidth="0.8dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/person"/>
+                android:drawableStart="@drawable/person"
+                android:drawableLeft="@drawable/person" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -50,18 +55,24 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
+            app:boxCornerRadiusBottomEnd="15dp"
+            app:boxCornerRadiusBottomStart="15dp"
+            app:boxCornerRadiusTopEnd="15dp"
+            app:boxCornerRadiusTopStart="15dp"
             android:layout_margin="8dp"
             android:hint="Phone Number"
             app:boxBackgroundMode="outline"
-            app:boxStrokeColor="@color/colorPrimaryDark"
+            app:boxStrokeColor="@color/design_default_color_on_primary"
             app:boxStrokeWidth="0.8dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/phone">
+                android:drawableStart="@drawable/phone"
+                android:drawableLeft="@drawable/phone"
+                android:inputType="numberSigned"
+                >
 
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
@@ -76,7 +87,11 @@
             android:layout_margin="8dp"
             android:hint="Email"
             app:boxBackgroundMode="outline"
-            app:boxStrokeColor="@color/colorPrimaryDark"
+            app:boxCornerRadiusBottomEnd="15dp"
+            app:boxCornerRadiusBottomStart="15dp"
+            app:boxCornerRadiusTopEnd="15dp"
+            app:boxCornerRadiusTopStart="15dp"
+            app:boxStrokeColor="@color/design_default_color_on_primary"
             app:boxStrokeWidth="0.8dp">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -88,21 +103,56 @@
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
 
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:hint="Pin Here"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="15dp"
+            app:boxCornerRadiusBottomStart="15dp"
+            app:boxCornerRadiusTopEnd="15dp"
+            app:boxCornerRadiusTopStart="15dp"
+            app:boxStrokeColor="@color/design_default_color_on_primary"
+            app:boxStrokeWidth="0.8dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/emerpin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/email"
+                android:drawableLeft="@drawable/email"
+                android:inputType="numberSigned"
+                >
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:hint="Enter Password"
+
+            app:boxCornerRadiusBottomEnd="15dp"
+            app:boxCornerRadiusBottomStart="15dp"
+            app:boxCornerRadiusTopEnd="15dp"
+            app:boxCornerRadiusTopStart="15dp"
             app:boxBackgroundMode="outline"
-            app:boxStrokeColor="@color/colorPrimaryDark"
+            app:boxStrokeColor="@color/design_default_color_on_primary"
             app:boxStrokeWidth="0.8dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/password">
+                android:drawableStart="@drawable/password"
+                android:drawableLeft="@drawable/password">
 
             </com.google.android.material.textfield.TextInputEditText>
         </com.google.android.material.textfield.TextInputLayout>
@@ -112,11 +162,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="15dp"
+            app:boxCornerRadiusBottomStart="15dp"
+            app:boxCornerRadiusTopEnd="15dp"
+            app:boxCornerRadiusTopStart="15dp"
             android:layout_margin="8dp"
             android:hint="Re-enter Password"
-            app:boxBackgroundMode="outline"
-            app:boxStrokeColor="@color/colorPrimaryDark"
+
+            app:boxStrokeColor="@color/design_default_color_on_primary"
             app:boxStrokeWidth="0.8dp">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -132,10 +186,11 @@
         <com.google.android.material.button.MaterialButton
             style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
             android:layout_width="252dp"
+            android:id="@+id/regme"
             android:layout_height="47dp"
             android:layout_marginLeft="57dp"
-            android:layout_marginTop="40dp"
-            android:background="@drawable/rounded_btn"
+            android:layout_marginTop="20dp"
+
             android:text="Register"
             android:textSize="14sp"
             app:boxBackgroundMode="outline"
