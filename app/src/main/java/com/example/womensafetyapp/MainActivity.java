@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     String provider;
     double lat=15.4871883,log=73.8265425;
 
-    String phoneNumber = "9922464496";
+    String phoneNumber = "9764214269";
     String myLatitude,myLongitude;
     MediaPlayer mediaPlayer;
 
