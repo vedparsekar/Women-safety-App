@@ -2,12 +2,30 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 
 android {
-    compileSdkVersion 29
+//*******for ved and lynessa********//
+
+       // compileSdkVersion 29
+
+//*******for Arjun********//
+
+        compileSdkVersion 30
+        buildToolsVersion "30.0.2"
+
+//****************************************//
 
     defaultConfig {
         applicationId "com.example.womensafetyapp"
-        minSdkVersion 21
-        targetSdkVersion 29
+
+//**********for ved and lynessa********//
+         // minSdkVersion 21
+         // targetSdkVersion 29
+
+//**************for Arjun ************//
+        minSdkVersion 16
+        targetSdkVersion 30
+
+//*****************************************//
+
         versionCode 1
         versionName "1.0"
 

@@ -12,12 +12,16 @@ public class UserDBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String query = "create table vehicleinfo (vehicleno text, details text)";
-        sqLiteDatabase.execSQL(query);
+        String table1 = "create table vehicleinfo (vehicleno text, details text)";
+        String table2 = "create table emergency_contact (contactName text, contactNo text)";
+        sqLiteDatabase.execSQL(table1);
+        sqLiteDatabase.execSQL(table2);
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
+    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
+        db.execSQL("DROP TABLE IF EXISTS vehicleinfo");
+        db.execSQL("DROP TABLE IF EXISTS emergency_contact");
+        onCreate(db);
     }
 }
