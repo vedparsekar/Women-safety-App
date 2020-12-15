@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,6 +19,10 @@ public class EmergencyContact extends AppCompatActivity {
 
     DBClient dbClient;
     Button add;
+    ListView lv;
+    Integer indexVal;
+    String item;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,11 +39,25 @@ public class EmergencyContact extends AppCompatActivity {
             }
         });
 
-        //error here....
-        ArrayList<HashMap<String, String>> emergencyList = dbClient.GetEmergency_contacts();
+
+        final ArrayList<HashMap<String, String>> emergencyList = dbClient.GetEmergency_contacts();
         
-       ListView lv = (ListView) findViewById(R.id.contact_list);
-        ListAdapter adapter = new SimpleAdapter(getApplicationContext(), emergencyList, R.layout.list_row,new String[]{"contactName","contactNo"}, new int[]{R.id.name, R.id.designation});
+        lv = (ListView) findViewById(R.id.contact_list);
+        final ListAdapter adapter = new SimpleAdapter(getApplicationContext(), emergencyList, R.layout.list_row,new String[]{"contactName","contactNo"}, new int[]{R.id.name, R.id.designation});
         lv.setAdapter(adapter);
+
+
+/*        lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                item = parent.getItemAtPosition(position).toString() + "has been selected";
+                indexVal = position;
+
+                Toast.makeText(EmergencyContact.this, "value " + indexVal, Toast.LENGTH_SHORT).show();
+
+                return true;
+            }
+        });*/
+
     }
 }
