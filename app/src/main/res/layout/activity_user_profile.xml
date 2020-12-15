@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -14,8 +15,20 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_gravity="center_horizontal">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:layout_marginTop="20dp"
+            android:text="Profile"
+            android:textColor="@color/purple_700"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="50dp"
+            />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -40,7 +53,7 @@
 
                 android:id="@+id/fname"
                 android:padding="10dp"
-                android:text="Ved Parsekar"
+                android:text=""
                 android:textColor="#A4A2A5"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -70,7 +83,7 @@
                 android:layout_marginStart="41dp"
               android:id="@+id/fphone"
                 android:padding="10dp"
-                android:text="9875887764"
+                android:text=""
                 android:textColor="#A4A2A5"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -101,7 +114,7 @@
                 android:layout_marginStart="70dp"
   android:id="@+id/femail"
                 android:padding="10dp"
-                android:text="vedparsekar@gmail.com"
+                android:text=""
                 android:textColor="#A4A2A5"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -110,4 +123,4 @@
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
