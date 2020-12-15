@@ -44,12 +44,16 @@ public class AddEmergencyContact extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dbClient.addContact(contactName.getText().toString(),contactNo.getText().toString());
-                Intent intent = new Intent(getApplicationContext(),EmergencyContact.class);
-                startActivity(intent);
+                if(contactName.getText().toString().isEmpty() &&contactNo.getText().toString().isEmpty()){
+                    Intent intent = new Intent(getApplicationContext(), EmergencyContact.class);
+                    startActivity(intent);
+                }else{
+                    dbClient.addContact(contactName.getText().toString(), contactNo.getText().toString());
+                    Intent intent = new Intent(getApplicationContext(), EmergencyContact.class);
+                    startActivity(intent);
+                }
             }
         });
-
 
     }
 

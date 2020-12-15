@@ -36,9 +36,8 @@ public class EmergencyContact extends AppCompatActivity {
         //error here....
         ArrayList<HashMap<String, String>> emergencyList = dbClient.GetEmergency_contacts();
         
-        ListView lv = (ListView) findViewById(R.id.contact_list);
+       ListView lv = (ListView) findViewById(R.id.contact_list);
         ListAdapter adapter = new SimpleAdapter(getApplicationContext(), emergencyList, R.layout.list_row,new String[]{"contactName","contactNo"}, new int[]{R.id.name, R.id.designation});
         lv.setAdapter(adapter);
-
     }
 }

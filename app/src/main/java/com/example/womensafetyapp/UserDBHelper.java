@@ -13,8 +13,8 @@ public class UserDBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         String table1 = "create table vehicleinfo (vehicleno text, details text)";
-        String table2 = "create table emergency_contact (contactName text, contactNo text)";
         sqLiteDatabase.execSQL(table1);
+        String table2 = "create table emergency_contact (contactName text, contactNo text)";
         sqLiteDatabase.execSQL(table2);
     }
 
