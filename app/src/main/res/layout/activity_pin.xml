@@ -16,7 +16,7 @@
         android:layout_marginBottom="472dp"
         android:background="#FFFFFF"
         android:cursorVisible="true"
-        android:inputType="phone"
+        android:inputType="numberSigned"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.166"

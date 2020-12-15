@@ -157,10 +157,21 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     public void StopSOS() {
+
+        Intent i=new Intent(MainActivity.this,Pin.class);
+        startActivity(i);
+
+
+
+
+        /*
+        // Stop sos
         if(mediaPlayer!=null){
             mediaPlayer.stop();
             mediaPlayer=null;
         }
+
+         */
     }
 
     public void StartSOS(){
