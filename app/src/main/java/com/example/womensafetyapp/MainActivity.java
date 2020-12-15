@@ -70,7 +70,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS}, PackageManager.PERMISSION_GRANTED);
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.SEND_SMS,Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.CAMERA}, PackageManager.PERMISSION_GRANTED);
+
 
         sos.setOnClickListener(new View.OnClickListener() {
             @Override
