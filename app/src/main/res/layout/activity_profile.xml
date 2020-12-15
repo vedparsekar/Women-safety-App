@@ -40,7 +40,7 @@
                 android:layout_marginStart="70dp"
                 android:fontFamily="@font/allerta"
                 android:padding="10dp"
-                android:text="Ved Parsekar"
+
                 android:textColor="#A4A2A5"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -70,7 +70,7 @@
                 android:layout_marginStart="41dp"
                 android:fontFamily="@font/allerta"
                 android:padding="10dp"
-                android:text="9875887764"
+
                 android:textColor="#A4A2A5"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -100,7 +100,7 @@
                 android:layout_marginStart="70dp"
                 android:fontFamily="@font/allerta"
                 android:padding="10dp"
-                android:text="vedparsekar@gmail.com"
+
                 android:textColor="#A4A2A5"
                 android:textSize="16sp"
                 android:textStyle="bold" />

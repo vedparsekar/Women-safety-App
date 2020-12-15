@@ -65,7 +65,7 @@ public class user_Login extends AppCompatActivity {
 
                         String pass= pass_auth.getText().toString().trim();
                        // mLoginProgress.dismiss();
-                        Intent mainintent = new Intent(user_Login.this,UserProfile.class);
+                        Intent mainintent = new Intent(user_Login.this,MainActivity.class);
 
                         mainintent.putExtra("password",pass );
 

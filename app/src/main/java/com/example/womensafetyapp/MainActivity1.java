@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textview.MaterialTextView;
 
 //import com.google.firebase.database.DatabaseReference;
 //import com.google.firebase.database.FirebaseDatabase;
@@ -22,6 +23,7 @@ public class MainActivity1 extends AppCompatActivity
 
     // DatabaseReference databaseReference;
 
+    MaterialTextView redirect_to_login1;
 
     TextInputEditText name1, mobile1, email1, emerpin1, pass1 , repass1;
 
@@ -36,6 +38,8 @@ public class MainActivity1 extends AppCompatActivity
         setContentView(R.layout.activity_main1);
 
         //     databaseReference = FirebaseDatabase.getInstance().getReference();
+
+        redirect_to_login1=(MaterialTextView)findViewById(R.id.redirect_to_login);
 
         name1=(TextInputEditText)findViewById(R.id.name);
 
@@ -60,6 +64,13 @@ public class MainActivity1 extends AppCompatActivity
         });
 
 
+        redirect_to_login1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new  Intent(MainActivity1.this,user_Login.class);
+                startActivity(i);
+            }
+        });
     }
 
     public void saveInfo()
