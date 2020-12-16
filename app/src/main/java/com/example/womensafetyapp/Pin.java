@@ -47,9 +47,9 @@ public class Pin extends AppCompatActivity {
 
         mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.police_siren1);
         mediaPlayer.start();
-         String message = "Hey I'm Stranded and unsafe. Help! \nhttps://maps.google.com/maps?q=" + lat1 + "," + lon2;
-         SmsManager smsManager = SmsManager.getDefault();
-         smsManager.sendTextMessage(phoneNumber, null, message, null, null);
+        // String message = "Hey I'm Stranded and unsafe. Help! \nhttps://maps.google.com/maps?q=" + lat1 + "," + lon2;
+         //SmsManager smsManager = SmsManager.getDefault();
+         //smsManager.sendTextMessage(phoneNumber, null, message, null, null);
 
 
         mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -65,7 +65,7 @@ public class Pin extends AppCompatActivity {
             @Override
             public void onDataEntered(final Pinview pinview, boolean fromUser) {
                 final String pin1= pin.getValue();
-                Toast.makeText(Pin.this, pinview.getValue(), Toast.LENGTH_SHORT).show();
+            //    Toast.makeText(Pin.this, pinview.getValue(), Toast.LENGTH_SHORT).show();
                 DataRef.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
