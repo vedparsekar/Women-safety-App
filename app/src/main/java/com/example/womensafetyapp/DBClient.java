@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -49,7 +50,10 @@ public class DBClient {
             cursor.moveToFirst();
             emergency_contacts = new ArrayList<>();
             emergency_contacts.add(cursor.getString(0));
+
             emergency_contacts.add(cursor.getString(1));
+            Toast.makeText(context,""+emergency_contacts.toString(),Toast.LENGTH_LONG).show();
+
             cursor.close();
             return emergency_contacts;
         }

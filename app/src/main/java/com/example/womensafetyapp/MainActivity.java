@@ -78,10 +78,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             public void onClick(View view) {
                 //Intent intent = new Intent(getApplicationContext(), Pin.class);
                 //startActivity(intent);
-                if(mediaPlayer == null)
+              //  if(mediaPlayer == null)
                     StartSOS();
-                else
-                    StopSOS();
+              //  {
+
+               // }
+
+               // else
+                 //   StopSOS();
             }
         });
 
@@ -175,14 +179,23 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     public void StartSOS(){
-        if(mediaPlayer==null) {
-            mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.police_siren1);
-            mediaPlayer.start();
-        }
 
-        String message = "Hey I'm Stranded and unsafe. Help! \nhttps://maps.google.com/maps?q=" + myLatitude + "," + myLongitude;
-        SmsManager smsManager = SmsManager.getDefault();
-        smsManager.sendTextMessage(phoneNumber, null, message, null, null);
+        Intent i= new Intent(MainActivity.this,Pin.class);
+        i.putExtra("Lat", myLatitude);
+        i.putExtra("Lon", myLongitude);
+
+        startActivity(i);
+     //   if(mediaPlayer==null) {
+      //      mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.police_siren1);
+      //      mediaPlayer.start();
+      //  }
+        // Reading all contacts
+
+
+//
+      //  String message = "Hey I'm Stranded and unsafe. Help! \nhttps://maps.google.com/maps?q=" + myLatitude + "," + myLongitude;
+      //  SmsManager smsManager = SmsManager.getDefault();
+       // smsManager.sendTextMessage(phoneNumber, null, message, null, null);
 
     }
 

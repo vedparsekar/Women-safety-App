@@ -6,6 +6,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -28,7 +29,7 @@ public class Pin extends AppCompatActivity {
     Pinview pin;
 
     MaterialButton btn;
-
+    String phoneNumber="9923854568";
     public FirebaseUser mCurrentUser;
     MediaPlayer mediaPlayer;
 
@@ -38,7 +39,17 @@ public class Pin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pin);
 
+        Intent i= getIntent();
+        String lat1= i.getStringExtra("Lat");
+        String lon2= i.getStringExtra("Lon");
+
         pin = (Pinview) findViewById(R.id.otp_view);
+
+        mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.police_siren1);
+        mediaPlayer.start();
+         String message = "Hey I'm Stranded and unsafe. Help! \nhttps://maps.google.com/maps?q=" + lat1 + "," + lon2;
+         SmsManager smsManager = SmsManager.getDefault();
+         smsManager.sendTextMessage(phoneNumber, null, message, null, null);
 
 
         mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -52,9 +63,9 @@ public class Pin extends AppCompatActivity {
         pin.setPinViewEventListener(new Pinview.PinViewEventListener() {
 
             @Override
-            public void onDataEntered(Pinview pinview, boolean fromUser) {
+            public void onDataEntered(final Pinview pinview, boolean fromUser) {
                 final String pin1= pin.getValue();
-
+                Toast.makeText(Pin.this, pinview.getValue(), Toast.LENGTH_SHORT).show();
                 DataRef.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
@@ -62,19 +73,20 @@ public class Pin extends AppCompatActivity {
                       //  name.setText(name1);
 
 
-                        if (pin1.equals(pin12))
+                        if (pinview.getValue().equals(pin12))
                         {
-
+                            if(mediaPlayer!=null) {
                                 mediaPlayer.stop();
-                                mediaPlayer=null;
+                                mediaPlayer = null;
 
-                            Intent i= new Intent(Pin.this,MainActivity.class);
-                            startActivity(i);
-
+                                Intent i = new Intent(Pin.this, MainActivity.class);
+                                startActivity(i);
+                            }
 
                         }
                         else
                         {
+
                            Toast.makeText(getApplicationContext(),"Enter Correct Pin",Toast.LENGTH_LONG).show();
                         }
 
@@ -91,7 +103,7 @@ public class Pin extends AppCompatActivity {
 
 
 
-                Toast.makeText(Pin.this, pinview.getValue(), Toast.LENGTH_SHORT).show();
+
             }
         });
 

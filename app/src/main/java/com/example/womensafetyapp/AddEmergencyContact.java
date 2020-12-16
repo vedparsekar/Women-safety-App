@@ -48,6 +48,9 @@ public class AddEmergencyContact extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(), EmergencyContact.class);
                     startActivity(intent);
                 }else{
+
+
+                    //Storing in database
                     dbClient.addContact(contactName.getText().toString(), contactNo.getText().toString());
                     Intent intent = new Intent(getApplicationContext(), EmergencyContact.class);
                     startActivity(intent);

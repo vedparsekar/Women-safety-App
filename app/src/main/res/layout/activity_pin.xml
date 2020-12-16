@@ -24,21 +24,7 @@
         app:password="true"
         app:pinLength="4" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="275dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="143dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginBottom="356dp"
-        android:background="@drawable/rounded_btn"
-        android:fontFamily="sans-serif-medium"
-        android:text="Submit"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.451"
-        app:layout_constraintStart_toStartOf="parent" />
+
 
     <TextView
         android:id="@+id/textView"
