@@ -50,22 +50,7 @@
         app:pinLength="4" />
 
 
-<<<<<<< HEAD
-=======
-    <Button
-        android:id="@+id/button"
-        android:layout_width="275dp"
-        android:layout_height="47dp"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/rounded_btn"
-        android:fontFamily="sans-serif-medium"
-        android:text="Submit"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.451"
-        app:layout_constraintStart_toStartOf="parent" />
->>>>>>> d0c4d9d04c0167c5dc0bd9d802cc28376679e8f1
+ 
 
     </LinearLayout>
 
