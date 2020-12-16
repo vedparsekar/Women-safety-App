@@ -194,9 +194,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         String message = "Hey I'm Stranded and unsafe. Help! \nhttps://maps.google.com/maps?q=" + myLatitude + "," + myLongitude;
         SmsManager smsManager = SmsManager.getDefault();
 
-        for(int j=0;j<=(userList).size();j++)
+        for(int j=0;j<=(userList).size()-1;j++)
         {
-            smsManager.sendTextMessage(userList.get(0).get("contactNo"), null, message, null, null);
+            //smsManager.sendTextMessage(userList.get(0).get("contactNo"), null, message, null, null);
+            Toast.makeText(getApplicationContext(),userList.get(j).get("contactNo"),Toast.LENGTH_SHORT).show();
         }
         startActivity(i);
      //   if(mediaPlayer==null) {
