@@ -196,8 +196,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         for(int j=0;j<=(userList).size()-1;j++)
         {
-            //smsManager.sendTextMessage(userList.get(0).get("contactNo"), null, message, null, null);
-            Toast.makeText(getApplicationContext(),userList.get(j).get("contactNo"),Toast.LENGTH_SHORT).show();
+            smsManager.sendTextMessage(userList.get(j).get("contactNo"), null, message, null, null);
+            Toast.makeText(getApplicationContext(),"sms sent:"+userList.get(j).get("contactNo"),Toast.LENGTH_SHORT).show();
         }
         startActivity(i);
      //   if(mediaPlayer==null) {
