@@ -50,6 +50,7 @@
         app:pinLength="4" />
 
 
+
     <Button
         android:id="@+id/button"
         android:layout_width="275dp"
@@ -63,6 +64,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.451"
         app:layout_constraintStart_toStartOf="parent" />
+
 
     </LinearLayout>
 
