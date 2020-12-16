@@ -37,6 +37,9 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback,LocationListener {
     Button sos;
     BottomNavigationView bottomNavigationView;
@@ -45,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     LocationManager locationManager;
     String provider;
     double lat=15.4871883,log=73.8265425;
+    DBClient dbClient;
 
     String phoneNumber = "9764214269";
     String myLatitude,myLongitude;
@@ -184,6 +188,16 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         i.putExtra("Lat", myLatitude);
         i.putExtra("Lon", myLongitude);
 
+        dbClient = new DBClient(this);
+        dbClient.open();
+        ArrayList<HashMap<String, String>> userList = dbClient.GetEmergency_contacts();
+        String message = "Hey I'm Stranded and unsafe. Help! \nhttps://maps.google.com/maps?q=" + myLatitude + "," + myLongitude;
+        SmsManager smsManager = SmsManager.getDefault();
+
+        for(int j=0;j<=(userList).size();j++)
+        {
+            smsManager.sendTextMessage(userList.get(0).get("contactNo"), null, message, null, null);
+        }
         startActivity(i);
      //   if(mediaPlayer==null) {
       //      mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.police_siren1);
@@ -193,9 +207,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
 
 //
-      //  String message = "Hey I'm Stranded and unsafe. Help! \nhttps://maps.google.com/maps?q=" + myLatitude + "," + myLongitude;
-      //  SmsManager smsManager = SmsManager.getDefault();
-       // smsManager.sendTextMessage(phoneNumber, null, message, null, null);
+
 
     }
 
