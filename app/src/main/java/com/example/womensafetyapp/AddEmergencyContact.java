@@ -44,9 +44,8 @@ public class AddEmergencyContact extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(contactName.getText().toString().isEmpty() &&contactNo.getText().toString().isEmpty()){
-                    Intent intent = new Intent(getApplicationContext(), EmergencyContact.class);
-                    startActivity(intent);
+                if(contactName.getText().toString().isEmpty() || contactNo.getText().toString().isEmpty()){
+                    Toast.makeText(AddEmergencyContact.this, "Please fill out the details!", Toast.LENGTH_SHORT).show();
                 }else{
 
 

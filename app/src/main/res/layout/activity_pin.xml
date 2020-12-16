@@ -1,19 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".Pin">
+    android:orientation="vertical"
+    tools:context=".Pin"
+    android:gravity="center_vertical">
 
-    <com.goodiebag.pinview.Pinview
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="@font/allerta"
+            android:text="Enter PIN"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/otp_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <com.goodiebag.pinview.Pinview
         android:id="@+id/otp_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginEnd="273dp"
-        android:layout_marginBottom="472dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="40dp"
         android:background="#FFFFFF"
         android:cursorVisible="true"
         android:inputType="numberSigned"
@@ -25,22 +50,23 @@
         app:pinLength="4" />
 
 
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="166dp"
-        android:layout_marginEnd="167dp"
-        android:layout_marginBottom="80dp"
-        android:fontFamily="@font/allerta"
-        android:text="Enter PIN"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/otp_view"
+<<<<<<< HEAD
+=======
+    <Button
+        android:id="@+id/button"
+        android:layout_width="275dp"
+        android:layout_height="47dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/rounded_btn"
+        android:fontFamily="sans-serif-medium"
+        android:text="Submit"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.451"
         app:layout_constraintStart_toStartOf="parent" />
+>>>>>>> d0c4d9d04c0167c5dc0bd9d802cc28376679e8f1
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</LinearLayout>

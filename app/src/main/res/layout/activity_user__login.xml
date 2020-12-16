@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="150dp"
         android:orientation="vertical"
         android:padding="20dp">
 
@@ -17,11 +17,10 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="150dp"
             android:layout_marginBottom="40dp"
-
+            android:layout_gravity="center_horizontal"
             android:text="Login"
-            android:textColor="@color/design_default_color_on_primary"
+            android:textColor="@color/design_default_color_primary_variant"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -29,9 +28,8 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:layout_margin="12dp"
-            android:hint="Phone Number"
+            android:hint="Email"
             app:boxBackgroundMode="outline"
             app:boxStrokeColor="@color/design_default_color_on_primary"
             app:boxStrokeWidth="0.8dp">
@@ -55,12 +53,14 @@
             android:hint="Enter Password"
             app:boxBackgroundMode="outline"
             app:boxStrokeColor="@color/design_default_color_on_primary"
-            app:boxStrokeWidth="0.8dp">
+            app:boxStrokeWidth="0.8dp"
+            app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="textPassword"
                 android:drawableStart="@drawable/password"
                 android:drawableLeft="@drawable/password"
                 android:id="@+id/passwordq">
@@ -70,11 +70,11 @@
 
         <com.google.android.material.button.MaterialButton
             style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-            android:layout_width="252dp"
-            android:layout_height="47dp"
-            android:layout_marginLeft="57dp"
-            android:layout_marginTop="40dp"
-android:id="@+id/loginbtn"
+            android:layout_width="242dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:id="@+id/loginbtn"
             android:text="Login  "
             android:textSize="14sp"
             app:boxBackgroundMode="outline"
