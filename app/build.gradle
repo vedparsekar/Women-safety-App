@@ -4,12 +4,12 @@ apply plugin: 'com.google.gms.google-services'
 android {
 //*******for ved and lynessa********//
 
-       compileSdkVersion 29
+      // compileSdkVersion 29
 
 //*******for Arjun********//
 
-        //compileSdkVersion 30
-       // buildToolsVersion "30.0.2"
+        compileSdkVersion 30
+        buildToolsVersion "30.0.2"
 
 //****************************************//
 
@@ -17,12 +17,12 @@ android {
         applicationId "com.example.womensafetyapp"
 
 //**********for ved and lynessa********//
-        minSdkVersion 21
-         targetSdkVersion 29
+       // minSdkVersion 21
+       //  targetSdkVersion 29
 
 //**************for Arjun ************//
-        //minSdkVersion 16
-        //targetSdkVersion 30
+        minSdkVersion 16
+        targetSdkVersion 30
 
 //*****************************************//
 

@@ -11,13 +11,20 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.Menu;
@@ -40,7 +47,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class MainActivity extends AppCompatActivity implements OnMapReadyCallback,LocationListener {
+public class MainActivity extends AppCompatActivity implements OnMapReadyCallback,LocationListener, SensorEventListener {
     Button sos;
     BottomNavigationView bottomNavigationView;
     MapView mapView;
@@ -55,6 +62,13 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     MediaPlayer mediaPlayer;
 
     private static final String MAP_VIEW_BUNDLE_KEY = "MapViewBundleKey";
+
+    private SensorManager sensorManager;
+    private Sensor accelerometerSensor;
+    private boolean isAccelerometerSensorAvailable,notFirstTime = false;
+    private float currentX,currentY,currentZ,lastX,lastY,lastZ;
+    private float xDifference,yDifference,zDifference;
+    private float shakeThreshold = 10f;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +106,17 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                  //   StopSOS();
             }
         });
+
+
+        //************Shaking Phone(gesture)***********//
+        sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+
+        if(sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)!=null){
+            accelerometerSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+            isAccelerometerSensorAvailable = true;
+        }else{
+            isAccelerometerSensorAvailable = false;
+        }
 
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -227,6 +252,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     protected void onResume() {
         super.onResume();
+        if(isAccelerometerSensorAvailable){
+            sensorManager.registerListener(this,accelerometerSensor,SensorManager.SENSOR_DELAY_NORMAL);
+        }
         mapView.onResume();
     }
 
@@ -244,6 +272,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     protected void onPause() {
         mapView.onPause();
+        if(isAccelerometerSensorAvailable){
+            sensorManager.unregisterListener(this);
+        }
         super.onPause();
     }
     @Override
@@ -343,6 +374,42 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onStatusChanged(String provider, int status, Bundle extras) {
         // TODO Auto-generated method stub
+    }
+
+    @Override
+    public void onSensorChanged(SensorEvent sensorEvent) {
+        currentX = sensorEvent.values[0];
+        currentY = sensorEvent.values[1];
+        currentZ = sensorEvent.values[2];
+
+        if(notFirstTime){
+            xDifference = Math.abs(lastX-currentX);
+            yDifference = Math.abs(lastY-currentY);
+            zDifference = Math.abs(lastZ-currentZ);
+
+            if((xDifference > shakeThreshold) && (yDifference > shakeThreshold) ||
+                    (xDifference > shakeThreshold) && (zDifference > shakeThreshold) ||
+                    (yDifference > shakeThreshold) && (zDifference > shakeThreshold)){
+                /*
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    vibrator.vibrate(VibrationEffect.createOneShot(500,VibrationEffect.DEFAULT_AMPLITUDE));
+                }else{
+                    vibrator.vibrate(500);
+                }
+                */
+                StartSOS();
+            }
+        }
+
+        lastX = currentX;
+        lastY = currentY;
+        lastZ = currentZ;
+        notFirstTime = true;
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
     }
 
 }
